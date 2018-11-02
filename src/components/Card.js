@@ -2,8 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {CardHeader, CardRightContent, CardTitle, Detail, Footer, MovableCardWrapper} from '../styles/Base'
 import Tag from './Tag'
-import DeleteButton from './widgets/DeleteButton'
-
+import { MenuDropdown} from '../styles/Elements';
 class Card extends Component {
   removeCard = e => {
     const {id, laneId, removeCard, onDelete} = this.props
@@ -11,7 +10,6 @@ class Card extends Component {
     onDelete(id, laneId)
     e.stopPropagation()
   }
-
   renderBody = () => {
     if (this.props.customCardLayout) {
       const {customCard, ...otherProps} = this.props
@@ -22,7 +20,7 @@ class Card extends Component {
         <span>
           <CardHeader>
             <CardTitle>{title}</CardTitle>
-            <CardRightContent>{label}</CardRightContent>
+            {/* <CardRightContent>{label}</CardRightContent> */}
           </CardHeader>
           <Detail>{description}</Detail>
           {tags && <Footer>{tags.map(tag => <Tag key={tag.title} {...tag} tagStyle={this.props.tagStyle} />)}</Footer>}
@@ -32,7 +30,7 @@ class Card extends Component {
   }
 
   render() {
-    const {id, cardStyle, editable, hideCardDeleteIcon, customCardLayout, dragStyle, ...otherProps} = this.props
+    const {menu, id, cardStyle, editable, hideCardDeleteIcon, customCardLayout, dragStyle, ...otherProps} = this.props
     const style = customCardLayout ? {...cardStyle, padding: 0} : cardStyle
     return (
       <MovableCardWrapper
@@ -44,7 +42,9 @@ class Card extends Component {
         }}
         {...otherProps}>
         {this.renderBody()}
-        {editable && !hideCardDeleteIcon && <DeleteButton onClick={this.removeCard} />}
+        {/* {editable && !hideCardDeleteIcon && <DeleteButton onClick={this.removeCard} />} */}
+        {/* {editable && !hideCardDeleteIcon && <DeleteButton  />} */}
+        {editable && !hideCardDeleteIcon && <MenuDropdown>{menu}</MenuDropdown>}
       </MovableCardWrapper>
     )
   }
@@ -59,6 +59,7 @@ Card.defaultProps = {
 }
 
 Card.propTypes = {
+  menu: PropTypes.object,
   id: PropTypes.string.isRequired,
   title: PropTypes.string,
   index: PropTypes.number,

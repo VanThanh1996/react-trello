@@ -23,7 +23,7 @@ injectGlobal`
 
 export const BoardDiv = styled.div`
   background-color: #3179BA;
-  overflow-y: hidden;
+  overflow-y: visible;
   padding: 5px;
   color: #393939;
   display: flex;
@@ -34,9 +34,9 @@ export const BoardDiv = styled.div`
 
 export const Header = styled.header`
   margin-bottom: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  // display: flex;
+  //flex-direction: row;
+  //align-items: flex-start;
 `
 
 export const Section = styled.section`
@@ -68,9 +68,9 @@ export const LaneFooter = styled.div`
 
 export const ScrollableLane = styled.div`
 	flex: 1;
-	overflow-y: auto;
+	overflow-y: visible;
 	min-width: 250px;
-	overflow-x: hidden;
+	overflow-x: visible;
 	align-self: center;
 	max-height: 90vh;
 	padding-bottom: ${props => (props.isDraggingOver ? '130px' : '30px')};
@@ -79,16 +79,16 @@ export const ScrollableLane = styled.div`
 	justify-content: space-between;
 `
 
-export const Title = styled.span`
+export const Title = styled.div`
   font-weight: bold;
   font-size: 15px;
   line-height: 18px;
   cursor: grab;
-  width: 70%;
+  //width: 70%;
 `
 
 export const RightContent = styled.span`
-  width: 30%;
+  //width: 30%;
   text-align: right;
   padding-right: 10px;
   font-size: 13px;
@@ -118,6 +118,8 @@ export const CardHeader = styled(Header)`
 
 export const CardTitle = styled(Title)`
   font-size: 14px;
+  color: #4d4d4d;
+  white-space: normal;
 `
 
 export const CardRightContent = styled(RightContent)`

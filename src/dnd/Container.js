@@ -25,8 +25,9 @@ class Container extends Component {
 	componentWillUnmount() {
 		this.container.dispose();
 		this.container = null;
-	}
 
+	}
+	
 	componentDidUpdate() {
 		this.containerDiv = this.containerDiv || ReactDOM.findDOMNode(this);
 		if (this.containerDiv) {
@@ -35,6 +36,12 @@ class Container extends Component {
 				this.container = container(this.containerDiv, this.getContainerOptions(this.props));
 				this.prevContainer = this.containerDiv;
 			}
+		}
+		let x = document.getElementsByTagName("article");
+		if (x.length < 1)
+			return;
+		for (var i = 0; i < x.length; i++) {
+			x[i].parentElement.style.overflow = "visible";
 		}
 	}
 

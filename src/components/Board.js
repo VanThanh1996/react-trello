@@ -14,7 +14,7 @@ export default class Board extends Component {
     this.store = this.getStore();
     this.id = uuidv1()
   }
-
+  
   getStore = () => {
     //When you create multiple boards, unique stores are created for isolation
     return createStore(boardReducer, applyMiddleware(...middlewares))

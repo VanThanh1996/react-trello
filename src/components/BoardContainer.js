@@ -112,7 +112,6 @@ class BoardContainer extends Component {
       return <NewLane onCancel={this.hideEditableLane} onAdd={this.addNewLane}/>
     }
   }
-
   render() {
     const {id, reducerData, draggable, laneDraggable, laneDragClass, style, addLaneTitle, editable, ...otherProps} = this.props
     const {addLaneMode} = this.state

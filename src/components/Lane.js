@@ -171,7 +171,7 @@ class Lane extends Component {
           tagStyle={tagStyle}
           cardStyle={cardStyle}
           removeCard={this.removeCard}
-          onClick={e => this.handleCardClick(e, card)}
+          //onClick={e => this.handleCardClick(e, card)}
           onDelete={this.props.onCardDelete}
           editable={editable}
           hideCardDeleteIcon={hideCardDeleteIcon}
@@ -215,11 +215,11 @@ class Lane extends Component {
       return (
         <LaneHeader onDoubleClick={this.toggleLaneCollapsed}>
           <Title style={titleStyle}>{title}</Title>
-          {label && (
+          {/* {label && (
             <RightContent>
               <span style={labelStyle}>{label}</span>
             </RightContent>
-          )}
+          )} */}
         </LaneHeader>
       )
     }

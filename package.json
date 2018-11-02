@@ -1,6 +1,7 @@
 {
   "name": "react-trello",
-  "description": "Pluggable components to add a trello like kanban board to your application",
+  "version": "2.0.2",
+  "description": "Pluggable components to add a trello like kanban board to your application and can add menu to can add menu to card",
   "main": "dist/index.js",
   "jsnext:main": "components/index.js",
   "module": "components/index.js",
@@ -37,7 +38,7 @@
   "bugs": {
     "url": "https://github.com/rcdexta/react-trello/issues"
   },
-  "homepage": "https://github.com/rcdexta/react-trello",
+  "homepage": "https://github.com/VanThanh1996/react-trello",
   "dependencies": {
     "immutability-helper": "^2.8.1",
     "lodash": "^4.17.11",
